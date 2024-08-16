@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-md bg-body-tertiary border-bottom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"><i class="fa-regular fa-compass"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/listing">Show listing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/listing/new">Add listing</a>
+          </li>
+        </ul>
+        <form class="d-flex container-fluid" role="search">
+          <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
+          
+          <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        <div class="navbar-nav ms-auto">
+          <%if(!currUser){%>
+            <a class="nav-link  btn btn-primary" href="/signup">SignUp
+              <img width="24" height="24" src="https://img.icons8.com/material-rounded/24/add-user-male.png" alt="add-user-male"/>
+            </a>
+            <a class="nav-link  btn btn-success" id="login" href="/login">LogIn
+              <img width="24" height="24" src="https://img.icons8.com/ios/50/login-rounded-right--v1.png" alt="login-rounded-right--v1"/>
+            </a>
+          <%}%>
+          <%if(currUser){%>
+            <a class="nav-link btn btn-danger"  href="/logout">LogOut
+              <img width="24" height="24" src="https://img.icons8.com/fluency-systems-regular/48/exit--v1.png" alt="exit--v1"/>
+              </a>
+          <%}%>
+        </div>
+      </div>
+    </div>
+  </nav>
